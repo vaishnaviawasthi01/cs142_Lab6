@@ -69,27 +69,7 @@ class BiST
 			displayHelper(curr->right);
 		}
 	
-		void displayFancy()
-			{
-			displayFancyHelper(root,0);
-			}
-	
-		void displayFancyHelper(Node * cur,int s)
-			{
-			//when at the end of a trail return
-			if(cur == NULL)
-			{
-				return;
-			}
-			//go to the left and increase the number of spaces
-			displayFancyHelper(cur->left,s+1);
-			//print the spaces
-			for(int i=0;i<4*s;i++){cout<<" ";}
-			//print the data
-			cout<<cur->data<<endl;
-			//go to the right and increase the number of spaces
-			displayFancyHelper(cur->right,s+1);
-  		}
+		
 		//search
 		Node * search(Node * cur,int value)
 		{
@@ -124,13 +104,5 @@ int main()
 		b1.insert(5);
 		b1.insert(53);
 		b1.insert(6);
-		b1.displayFancy();
-		if ( b1.search ( b1.root , 2) == NULL)
-		{
-			cout << "Not Found"<<endl;
-		}
-		else
-		{
-			cout<<"Found"<<endl;
-		}
+		b1.display();
 }
